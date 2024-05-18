@@ -1,0 +1,9 @@
+.elementor-8 .elementor-element.elementor-element-06dbd17 {--display: flex;--flex-direction: column;--container-widget-width: 100%;--container-widget-height: initial;--container-widget-flex-grow: 0;--container-widget-align-self: initial;--background-transition: .3s;}
+.whatsapp-container {text-align: center;margin: 20px;}
+#whatsappButton {padding: 10px 20px;font-size: 16px;cursor: pointer;border: none;background-color: #25d366;color: white;border-radius: 5px;}
+#whatsappButton:hover {background-color: #1ebe57;}
+<style>
+
+#orderID {padding: 10px;border: 2px solid #ccc;border-radius: 5px;font-size: 16px;width: 200px;margin-right: 10px;}
+button {padding: 10px 20px;background-color: #4caf50;color: white;border: none;border-radius: 5px;cursor: pointer;font-size: 16px;}
+button:hover {background-color: #45a049;}
