@@ -287,6 +287,123 @@ function trackOrder() {
 				</div>
 					</div>
 				</div>
+		<div class="elementor-element elementor-element-7cd4352 e-flex e-con-boxed e-con e-parent" data-id="7cd4352" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-8b898fd elementor-widget elementor-widget-html" data-id="8b898fd" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Form</title>
+<style>
+/* CSS Styles */
+#order-form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#price-display {
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+
+
+
+<div id="order-form">
+    <label>Medium:</label>
+    <select id="medium" onchange="calculatePrice()">
+        <option value="charcoal">Charcoal</option>
+        <option value="pencil">Pencil</option>
+        <option value="color">Color</option>
+    </select>
+
+    <label>Size:</label>
+    <select id="size" onchange="calculatePrice()">
+        <option value="A4">A4</option>
+        <option value="A2">A2 (+500rs)</option>
+        <option value="A1">A1 (+800rs)</option>
+    </select>
+</div>
+
+
+<div id="price-display"></div>
+
+
+<button onclick="redirectToWhatsApp()">Order Now</button>
+
+<script>
+// JavaScript Code
+function calculatePrice() {
+    var basePrice = 0;
+    var medium = document.getElementById("medium").value;
+    var size = document.getElementById("size").value;
+
+    switch (medium) {
+        case "charcoal":
+        case "pencil":
+            basePrice = 2000;
+            break;
+        case "color":
+            basePrice = 2500;
+            break;
+    }
+
+    switch (size) {
+        case "A2":
+            basePrice += 500;
+            break;
+        case "A1":
+            basePrice += 800;
+            break;
+    }
+
+    document.getElementById("price-display").innerText = "Total Price: " + basePrice + "rs";
+}
+
+function redirectToWhatsApp() {
+    var medium = document.getElementById("medium").value;
+    var size = document.getElementById("size").value;
+    var totalPrice = document.getElementById("price-display").innerText;
+
+    var message = "Order: Medium - " + medium + ", Size - " + size + ". Total Price - " + totalPrice;
+
+    window.location.href = "https://wa.me/8089405187?text=" + encodeURIComponent(message);
+}
+
+// Initial calculation on page load
+calculatePrice();
+</script>
+
+
+		</div>
+				</div>
+					</div>
+				</div>
 				</div>
 		</div>
 </main>
