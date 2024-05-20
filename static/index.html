@@ -204,7 +204,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 						<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
 							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M13 11.8l6.1-6.3-1-1-6.1 6.2-6.1-6.2-1 1 6.1 6.3-6.5 6.7 1 1 6.5-6.6 6.5 6.6 1-1z"></path></svg></button>
 							<div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
-								<ul class="wp-block-navigation__container is-responsive items-justified-right wp-block-navigation"><ul class="wp-block-page-list"><li class="wp-block-pages-list__item wp-block-navigation-item open-on-hover-click"><a class="wp-block-pages-list__item__link wp-block-navigation-item__content" href="https://awesometramp.github.io/static/sample-page/">Sample Page</a></li><li class="wp-block-pages-list__item current-menu-item wp-block-navigation-item open-on-hover-click"><a class="wp-block-pages-list__item__link wp-block-navigation-item__content" href="https://awesometramp.github.io/static/static/" aria-current="page">static</a></li></ul></ul>
+								<ul class="wp-block-navigation__container is-responsive items-justified-right wp-block-navigation"><ul class="wp-block-page-list"><li class="wp-block-pages-list__item wp-block-navigation-item open-on-hover-click"><a class="wp-block-pages-list__item__link wp-block-navigation-item__content" href="https://awesometramp.github.io/static/new/">new</a></li><li class="wp-block-pages-list__item current-menu-item wp-block-navigation-item open-on-hover-click"><a class="wp-block-pages-list__item__link wp-block-navigation-item__content" href="https://awesometramp.github.io/static/static/" aria-current="page">static</a></li></ul></ul>
 							</div>
 						</div>
 					</div>
@@ -272,7 +272,7 @@ function trackOrder() {
     // Check if orderID is not empty
     if (orderID.trim() !== "") {
         // Combine the base URL with the order ID
-        var baseURL = "https://script.google.com/macros/s/AKfycbxBjRC9Wu5oLoctyzjnkKxPcTa9S4ICMsZiCc51mNSo7ThTVY-zaZA4y7TXTns9FsLWAQ/exec?id=";
+        var baseURL = "https://script.google.com/macros/s/AKfycbzM2qpNhZSQTTJnw8ovQIT64zJ--53H2XE5FrUfllDD3HPK33tJEMtUTCXj-raDA0NnDw/exec?id=ORD-";
         var trackingURL = baseURL + orderID;
         
         // Redirect the user to the tracking URL
@@ -283,123 +283,6 @@ function trackOrder() {
     }
 }
 </script>
-		</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-7cd4352 e-flex e-con-boxed e-con e-parent" data-id="7cd4352" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-8b898fd elementor-widget elementor-widget-html" data-id="8b898fd" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-			
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Form</title>
-<style>
-/* CSS Styles */
-#order-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#price-display {
-    margin-top: 10px;
-    font-weight: bold;
-}
-</style>
-
-
-
-<div id="order-form">
-    <label>Medium:</label>
-    <select id="medium" onchange="calculatePrice()">
-        <option value="charcoal">Charcoal</option>
-        <option value="pencil">Pencil</option>
-        <option value="color">Color</option>
-    </select>
-
-    <label>Size:</label>
-    <select id="size" onchange="calculatePrice()">
-        <option value="A4">A4</option>
-        <option value="A2">A2 (+500rs)</option>
-        <option value="A1">A1 (+800rs)</option>
-    </select>
-</div>
-
-
-<div id="price-display"></div>
-
-
-<button onclick="redirectToWhatsApp()">Order Now</button>
-
-<script>
-// JavaScript Code
-function calculatePrice() {
-    var basePrice = 0;
-    var medium = document.getElementById("medium").value;
-    var size = document.getElementById("size").value;
-
-    switch (medium) {
-        case "charcoal":
-        case "pencil":
-            basePrice = 2000;
-            break;
-        case "color":
-            basePrice = 2500;
-            break;
-    }
-
-    switch (size) {
-        case "A2":
-            basePrice += 500;
-            break;
-        case "A1":
-            basePrice += 800;
-            break;
-    }
-
-    document.getElementById("price-display").innerText = "Total Price: " + basePrice + "rs";
-}
-
-function redirectToWhatsApp() {
-    var medium = document.getElementById("medium").value;
-    var size = document.getElementById("size").value;
-    var totalPrice = document.getElementById("price-display").innerText;
-
-    var message = "Order: Medium - " + medium + ", Size - " + size + ". Total Price - " + totalPrice;
-
-    window.location.href = "https://wa.me/8089405187?text=" + encodeURIComponent(message);
-}
-
-// Initial calculation on page load
-calculatePrice();
-</script>
-
-
 		</div>
 				</div>
 					</div>
@@ -586,7 +469,7 @@ calculatePrice();
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 </script>
 <script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/awesometramp.github.io\/static\/wp-admin\/admin-ajax.php","nonce":"83220bb502","urls":{"assets":"https:\/\/awesometramp.github.io\/static\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/awesometramp.github.io\/static\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/awesometramp.github.io\/static\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/awesometramp.github.io\/static\/wp-admin\/admin-ajax.php","nonce":"0b0e5bb12e","urls":{"assets":"https:\/\/awesometramp.github.io\/static\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/awesometramp.github.io\/static\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/awesometramp.github.io\/static\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 </script>
 <script src="https://awesometramp.github.io/static/wp-content/plugins/elementor-pro/assets/js/frontend.min.js" id="elementor-pro-frontend-js"></script>
 <script src="https://awesometramp.github.io/static/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js" id="elementor-waypoints-js"></script>
